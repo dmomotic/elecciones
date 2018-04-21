@@ -43,5 +43,11 @@ Route::delete('partidos/{id}', 'PartidoController@destroy');
 Route::get('/partidos/{id}/edit', 'PartidoController@edit');
 Route::post('/partidos/{id}/edit', 'PartidoController@update');
 
+Route::get('/poblaciones', 'PoblacionController@show');
+Route::post('/poblaciones', 'PoblacionController@store');
+Route::delete('/poblaciones/{id}', 'PoblacionController@destroy');
+Route::get('/poblaciones/{id}/edit', 'PoblacionController@edit');
+Route::post('/poblaciones/{id}/edit', 'PoblacionController@update');
+
 
 
