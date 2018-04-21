@@ -32,5 +32,16 @@ Route::get('/regiones/{id}/edit', 'RegionController@edit');
 Route::post('/regiones/{id}/edit', 'RegionController@update');
 
 Route::get('/departamentos', 'DepartamentoController@show');
+Route::post('/departamentos', 'DepartamentoController@store');
+Route::delete('/departamentos/{id}', 'DepartamentoController@destroy');
+Route::get('/departamentos/{id}/edit', 'DepartamentoController@edit');
+Route::post('/departamentos/{id}/edit', 'DepartamentoController@update');
+
+Route::get('/partidos', 'PartidoController@show');
+Route::post('/partidos', 'PartidoController@store');
+Route::delete('partidos/{id}', 'PartidoController@destroy');
+Route::get('/partidos/{id}/edit', 'PartidoController@edit');
+Route::post('/partidos/{id}/edit', 'PartidoController@update');
+
 
 

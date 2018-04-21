@@ -15,6 +15,6 @@ class Departamento extends Model
 
     //$departamento->region
     public function region(){
-    	return $this->belongsTo(Region::class);
+    	return $this->belongsTo(Region::class, 'id_region');
     }
 }

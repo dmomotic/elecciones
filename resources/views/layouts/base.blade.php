@@ -35,6 +35,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/partidos') }}">Partidos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/departamentos') }}">Departamentos</a>
+            </li>
     
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/regiones') }}">Regiones</a>
