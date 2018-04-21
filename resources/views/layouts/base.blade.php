@@ -36,6 +36,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link" href="{{ url('/tipo-elecciones') }}">Tipo Elecciones</a>
+            </li>
+
+            <li class="nav-item">
               <a class="nav-link" href="{{ url('/poblaciones') }}">Poblaciones</a>
             </li>
 
