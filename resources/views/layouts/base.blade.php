@@ -35,33 +35,55 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/tipo-elecciones') }}">Tipo Elecciones</a>
-            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/poblaciones') }}">Poblaciones</a>
-            </li>
+            @guest
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">Login</a>
+              </li>
+            @else
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Regiones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url('/paises') }}">Paises</a>
+                  <a class="dropdown-item" href="{{ url('/regiones') }}">Regiones</a>
+                  <a class="dropdown-item" href="{{ url('/departamentos') }}">Departamentos</a>
+                  <a class="dropdown-item" href="{{ url('/municipios') }}">Municipios</a>
+                </div>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/partidos') }}">Partidos</a>
-            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Elecciones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url('/partidos') }}">Partidos</a>
+                  <a class="dropdown-item" href="{{ url('/tipo-elecciones') }}">Tipo Elecciones</a>
+                  <a class="dropdown-item" href="{{ url('/poblaciones') }}">Poblaciones</a>
+                </div>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/departamentos') }}">Departamentos</a>
-            </li>
-    
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/regiones') }}">Regiones</a>
-            </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/paises') }}">Paises</a>
-            </li>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">Login</a>
-            </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                </ul>
+              </li>
+            @endguest
     
           </ul>
         </div>

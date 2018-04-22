@@ -44,6 +44,11 @@ Route::delete('/tipo-elecciones/{id}', 'TipoEleccionesController@destroy');
 Route::get('/tipo-elecciones/{id}/edit', 'TipoEleccionesController@edit');
 Route::post('/tipo-elecciones/{id}/edit', 'TipoEleccionesController@update');
 
+Route::get('/municipios', 'MunicipioController@show');
+Route::post('/municipios', 'MunicipioController@store');
+Route::delete('/municipios/{id}', 'MunicipioController@destroy');
+Route::get('/municipios/{id}/edit', 'MunicipioController@edit');
+Route::post('/municipios/{id}/edit', 'MunicipioController@update');
 
 
 
